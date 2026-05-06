@@ -1,5 +1,5 @@
 
-## Robotics 101
+## Project 1: Traffic Signal Lights Simulation
 
 ---
 
@@ -7,9 +7,8 @@
 
 This projects starts with basic building blocks of robotics and aims to help user complete three tasks:-
 
-1. Blink LED
-2. Read sensor data
-3. Move servo
+1. Traffic Signal Lights
+2. 
 
 
 ---
