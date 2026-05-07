@@ -1,0 +1,3 @@
+[wokwi]
+version = 1
+firmware = "build/p1_traffic_lights_system.ino.hex"
