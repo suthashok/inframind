@@ -1,4 +1,4 @@
-//int ledPin=11; //LED Pin
+int ledPin=11; //LED Pin
 int trigPin=9; // Trigger Pin
 int echoPin=10; //Echo Pin
 
@@ -8,7 +8,7 @@ float distance; //distance of the object
 void setup() {
   // put your setup code here, to run once:
 
-//pinMode(ledPin,OUTPUT); //LED Brightens
+pinMode(ledPin,OUTPUT); //LED Brightens
 pinMode(trigPin,OUTPUT); //Sends sound wave
 pinMode(echoPin,INPUT); //Read duration
 
@@ -35,6 +35,17 @@ distance=duration * 0.034/2; //duration * speed divide by 2 because to and fro
 Serial.print("Distance: ");
 Serial.print(distance);
 Serial.print(" cm\n");
+
+if (distance>15)
+{
+  digitalWrite(ledPin,HIGH);
+}
+else
+{
+  digitalWrite(ledPin,LOW);
+}
+
 delay(100);
+
 
 }
