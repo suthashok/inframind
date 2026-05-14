@@ -5,6 +5,8 @@ int echoPin=10; //Echo Pin
 long duration; //duration for sound wave to travel to and fro
 float distance; //distance of the object
 
+float avgDist;
+
 void setup() {
   // put your setup code here, to run once:
 
@@ -17,7 +19,10 @@ Serial.begin(9600); //Initialize Serial Monitor
 
 void loop() {
   // put your main code here, to run repeatedly:
+avgDist=0;
 
+for (int i;i<=4;i++)
+{
 digitalWrite(trigPin,LOW);
 delayMicroseconds(2);
 
@@ -31,12 +36,17 @@ digitalWrite(trigPin,LOW);
 duration=pulseIn(echoPin,HIGH);
 
 distance=duration * 0.034/2; //duration * speed divide by 2 because to and fro
+avgDist+=avgDist;
+}
+
+avgDist=avgDist/5;
 
 Serial.print("Distance: ");
-Serial.print(distance);
+Serial.print(avgDist);
 Serial.print(" cm\n");
 
-if (distance>15)
+
+if (avgDist>15)
 {
   digitalWrite(ledPin,HIGH);
 }
@@ -46,6 +56,5 @@ else
 }
 
 delay(100);
-
 
 }
