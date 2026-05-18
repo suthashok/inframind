@@ -96,6 +96,9 @@ Possible extensions:
 
 * Check & Verify Company Issued Parking Badges (No Authotised Access, ex. RFID based access control)
 * Vehicle counting & LCD display for slot availability
+* ML model to detect objext type and register it
+* FaceID recognition for registered users to avoid Unauthorised Access
+* Integrating parking payment along with auto barrier opening (Fastag Style)
 
 ---
 
