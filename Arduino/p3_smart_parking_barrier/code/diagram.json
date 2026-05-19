@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "author": "Ashok Suthar",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -99.6,
+      "left": 176.6,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -99.6,
+      "left": 147.8,
+      "attrs": { "color": "red" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 94, "left": 326.4, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -113.7, "left": 283.9, "attrs": {} }
+  ],
+  "connections": [
+    [ "led2:C", "uno:GND.1", "green", [ "v0", "h-191.6" ] ],
+    [ "led1:C", "uno:GND.1", "green", [ "v9.6", "h-230" ] ],
+    [ "led1:A", "uno:13", "red", [ "v28.8", "h-76.8" ] ],
+    [ "led2:A", "uno:12", "violet", [ "v38.4", "h-38.4" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v105.6", "h-192" ] ],
+    [ "ultrasonic1:TRIG", "uno:10", "green", [ "v9.6", "h-0.4", "v86.4", "h-211.2" ] ],
+    [ "ultrasonic1:ECHO", "uno:11", "blue", [ "v76.8", "h-231.2" ] ],
+    [ "ultrasonic1:GND", "uno:GND.2", "black", [ "v124.8", "h-212.4" ] ],
+    [ "servo1:PWM", "uno:9", "green", [ "h-38.4", "v-172.6", "h-124.8" ] ],
+    [ "servo1:V+", "uno:5V", "red", [ "h-163.2", "v0.1" ] ],
+    [ "servo1:GND", "uno:GND.2", "black", [ "h-153.6" ] ]
+  ],
+  "dependencies": {}
+}

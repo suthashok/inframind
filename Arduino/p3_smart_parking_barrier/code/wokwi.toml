@@ -1,0 +1,3 @@
+[wokwi]
+version = 1
+firmware = "build/p2_smart_parking_barrier.ino.hex"
