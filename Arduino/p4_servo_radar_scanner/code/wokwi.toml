@@ -1,0 +1,3 @@
+[wokwi]
+version = 1
+firmware = "build/p4_servo_radar_scanner.ino.hex"
