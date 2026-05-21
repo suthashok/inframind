@@ -4,4 +4,4 @@ This project simulates a basic radar scanning system using Arduino, an Ultrasoni
 
 ## Circuit Diagram
 
-![Wokwi Simulated Circuit Diagram](images/circuit_diagram.png)
+![Wokwi Simulated Circuit Diagram](images/circuit_design.png)
