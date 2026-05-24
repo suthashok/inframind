@@ -3,7 +3,7 @@
 // Build Command:- arduino-cli compile --fqbn arduino:avr:uno --output-dir ./build .
 // Project :- Arduino based Servo Radar Scanner
 
-// Component Used:- Servo Motor, UltraSonic Sensor, Uno
+// Component Used:- Servo Motor, UltraSonic Sensor, Uno, LED
 
 #include <Servo.h>
 
@@ -83,10 +83,13 @@ void loop()
         delay(100);
     }
 
+
+    //Taking comma formatted output as CSV
     medDist = calculateMedian(readings, 5);
-    Serial.print("Angle: ");
+    //Serial.print("Angle: ");
     Serial.print(angle);
-    Serial.print(" Distance: ");
+    Serial.print(",");
+    //Serial.print(" Distance: ");
     Serial.print(medDist);
     Serial.print("\n");
 
