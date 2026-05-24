@@ -9,20 +9,18 @@ plt.ion()
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='polar')
-#Setting only for 0 to 180 instead of full circle
-ax.set_thetamin(0)
-ax.set_thetamax(180)
 
-ax.set_theta_zero_location("W")
-ax.set_theta_direction(-1)
 
 angles=[]
 distances=[]
+pre_angle=0
+moving_forward=True
+
 
 while True:
 
     try:
-        line = ser.readline().decode().strip()
+        line = ser.readline().decode().strip() #Read from Serial Port
 
         print(line)   # Debug
 
@@ -30,6 +28,18 @@ while True:
 
         angle=float(angle)
         distance=float(distance)
+
+        # Clear the plot when the radar changes direction
+        if moving_forward and angle < pre_angle:
+            angles.clear()
+            distances.clear()
+            moving_forward=False
+        elif not moving_forward and angle > pre_angle:
+            angles.clear()
+            distances.clear()
+            moving_forward=True
+
+        pre_angle=angle; #remebers previous angle
 
         angles.append(np.radians(angle))
         distances.append(distance)
@@ -39,6 +49,10 @@ while True:
             distances=distances[-180:]
 
         ax.clear()
+
+        #Setting only for 0 to 180 instead of full circle
+        ax.set_thetamin(0)
+        ax.set_thetamax(180)
 
         ax.set_theta_zero_location("W")
         ax.set_theta_direction(-1)
