@@ -5,7 +5,10 @@
   "parts": [
     { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
     { "type": "wokwi-hc-sr04", "id": "ultrasonic", "top": -120, "left": 0, "attrs": {} },
-    { "type": "wokwi-servo", "id": "servo", "top": -120, "left": 200, "attrs": {} }
+    { "type": "wokwi-servo", "id": "servo", "top": -120, "left": 300, "attrs": {} },
+    { "type": "wokwi-text", "id": "pc_label", "top": 240, "left": 0, "attrs": { "text": "🖥️ Connected to PC (COM13) for Python Radar Plot" } },
+    { "type": "wokwi-led", "id": "led", "top": -120, "left": 200, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "res", "top": -70, "left": 190, "attrs": { "value": "200000" } }
   ],
   "connections": [
     [ "uno:5V", "ultrasonic:VCC", "red", [ "v-20", "h-30" ] ],
@@ -15,7 +18,11 @@
     
     [ "uno:5V", "servo:V+", "red", [ "v-20", "h40" ] ],
     [ "uno:GND.2", "servo:GND", "black", [ "v-30", "h50" ] ],
-    [ "uno:9", "servo:PWM", "green", [ "v-60" ] ]
+    [ "uno:9", "servo:PWM", "green", [ "v-60" ] ],
+    
+    [ "uno:12", "res:1", "green", [ "v-20" ] ],
+    [ "res:2", "led:A", "green", [ "v0" ] ],
+    [ "led:C", "uno:GND.3", "black", [ "v-20", "h-30" ] ]
   ],
   "dependencies": {}
 }
