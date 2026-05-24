@@ -9,6 +9,12 @@ plt.ion()
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='polar')
+#Setting only for 0 to 180 instead of full circle
+ax.set_thetamin(0)
+ax.set_thetamax(180)
+
+ax.set_theta_zero_location("W")
+ax.set_theta_direction(-1)
 
 angles=[]
 distances=[]
