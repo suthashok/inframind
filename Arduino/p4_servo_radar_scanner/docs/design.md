@@ -28,7 +28,7 @@ The challenge is not just moving a sensor. The challenge is acquiring stable, ac
 * Arduino Uno
 * Ultrasonic Sensor
 * Servo Motor (Scanner Base)
-
+* LED light
 ---
 
 ## System Behavior
